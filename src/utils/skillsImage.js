@@ -46,7 +46,6 @@ export const skillsImage = (skill) => {
     case 'vector db':
     case 'vector dbs':
     case 'vectordbs': return vectordb;
-    case 'mongodb': return mongoDB;
     case 'selenium': return selenium;
     default:
       break;

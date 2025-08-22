@@ -1,0 +1,252 @@
+.project-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+}
+
+.modal-desc-container {
+    margin-bottom: 1.5rem;
+}
+
+.modal-desc-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-family: var(--primaryFont);
+}
+
+.modal-desc-paragraph:last-child {
+    margin-bottom: 0;
+}
+.project-modal {
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 2rem;
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.project-modal h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-right: 2rem;
+    font-size: 2rem;
+    font-family: var(--primaryFont);
+}
+
+.modal-image-container {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #111;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+.dot.active {
+    transform: scale(1.2);
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-family: var(--primaryFont);
+    opacity: 0.8;
+}
+
+/* Content styles */
+.modal-content {
+    margin-top: 1rem;
+}
+
+.modal-desc {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-family: var(--primaryFont); 
+}
+
+.tech-stack {
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack h3 {
+    font-family: var(--primaryFont);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.tech-list {
+    font-family: var(--primaryFont);
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.project-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--primaryFont);
+    transition: all 0.3s;
+}
+
+.code-btn {
+    background-color: transparent;
+    border: 2px solid;
+}
+
+.code-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.demo-btn {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.demo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .project-modal {
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .project-modal h2 {
+        font-size: 1.75rem;
+    }
+    
+    .modal-desc {
+        font-size: 1rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .project-links a {
+        width: 100%;
+        justify-content: center;
+    }
+}

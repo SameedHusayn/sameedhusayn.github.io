@@ -19,6 +19,14 @@ import {
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
 
+    const shortname = (name) => {
+        if (name.length > 12) {
+            return name.split(' ')[0];
+        } else {
+            return name;
+        }
+    };
+
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
             color: theme.primary,
@@ -161,8 +169,8 @@ function Landing() {
                         className='lcr--content'
                         style={{ color: theme.tertiary }}
                     >
-                        <h6>{headerData.title}</h6>
-                        <h1>{headerData.name}</h1>
+                        {/* <h6>{headerData.title}</h6> */}
+                        <h1>Hi all, I'm {shortname(headerData.name)}</h1>
                         <p>{headerData.desciption}</p>
 
                         <div className='lcr-buttonContainer'>

@@ -9,7 +9,6 @@ export const skillsData = [
   'GitHub',
   'AWS',
   'GCP',
-  'VectorDBs',
   'Gradio',
   'Selenium',
   'MongoDB',
@@ -18,4 +17,5 @@ export const skillsData = [
   "Tensorflow",
   "MySQL",
   "PostgreSQL",
+  "VectorDB",
 ];
